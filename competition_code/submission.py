@@ -603,15 +603,29 @@ class ThrottleController():
         # Calculating curvature using Menger curvature formula
         radius = (len_side_1 * len_side_2 * len_side_3) / (4 * math.sqrt(area_squared))
         return radius
-
+#seaena_4_30_24
     def get_target_speed(self, radius: float, current_section):
         if radius >= self.max_radius:
             return self.max_speed
         mu = 2.0
+        if current_section == 0:
+            mu = 5.0
+        if current_section == 1:
+            mu = 2.2
+        if current_section == 2:
+            mu = 3.1
+        if current_section == 3:
+            mu = 3.5
+        if current_section == 4:
+            mu = 2.5
+        if current_section == 5:
+            mu = 5.7
         if current_section == 6:
-            mu = 1.1
+            mu = 3.2
         if current_section == 7:
-            mu = 1.5
+            mu = 2
+        if current_section == 8:
+            mu = 4
         if current_section == 9:
             mu = 1.5
         target_speed = math.sqrt(mu*9.81*radius) * 3.6
