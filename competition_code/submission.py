@@ -609,25 +609,25 @@ class ThrottleController():
             return self.max_speed
         mu = 2.0
         if current_section == 0:
-            mu = 5.0
+            mu = 3.0
         if current_section == 1:
-            mu = 2.2
+            mu = 2.0
         if current_section == 2:
-            mu = 3.1
+            mu = 2.4
         if current_section == 3:
-            mu = 3.5
+            mu = 2.4
         if current_section == 4:
-            mu = 2.5
+            mu = 1.7
         if current_section == 5:
-            mu = 5.7
+            mu = 1.4
         if current_section == 6:
-            mu = 3.2
+            mu = 3.0
         if current_section == 7:
-            mu = 2
+            mu = 1.9
         if current_section == 8:
-            mu = 4
+            mu = 1.9
         if current_section == 9:
-            mu = 1.5
+            mu = 1.7
         target_speed = math.sqrt(mu*9.81*radius) * 3.6
         return max(20, min(target_speed, self.max_speed))  # clamp between 20 and max_speed
 
@@ -641,3 +641,28 @@ class ThrottleController():
         if self.display_debug:
             print(text)
             self.debug_strings.append(text)
+
+
+
+# Solution finished in 352.850000000049 seconds
+        # mu = 2.0
+        # if current_section == 0:
+        #     mu = 3.0
+        # if current_section == 1:
+        #     mu = 2.0
+        # if current_section == 2:
+        #     mu = 2.4
+        # if current_section == 3:
+        #     mu = 2.4
+        # if current_section == 4:
+        #     mu = 1.7
+        # if current_section == 5:
+        #     mu = 1.4
+        # if current_section == 6:
+        #     mu = 3.0
+        # if current_section == 7:
+        #     mu = 2.1
+        # if current_section == 8:
+        #     mu = 1.9
+        # if current_section == 9:
+        #     mu = 1.7
